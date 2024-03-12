@@ -14,4 +14,7 @@
     <SourceRoot Include="C:\Program Files\DevExpress 23.1\Components\Offline Packages\" />
     <SourceRoot Include="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgHangfire_SqlServer Condition=" '$(PkgHangfire_SqlServer)' == '' ">C:\Users\SAMET\.nuget\packages\hangfire.sqlserver\1.8.11</PkgHangfire_SqlServer>
+  </PropertyGroup>
 </Project>
