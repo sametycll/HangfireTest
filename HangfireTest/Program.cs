@@ -1,4 +1,5 @@
 using Hangfire;
+using HangfireBasicAuthenticationFilter;
 using HangfireTest.Jobs;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,7 +30,21 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-app.UseHangfireDashboard();
+app.UseHangfireDashboard("/test/jobs", new DashboardOptions
+{
+    DashboardTitle = "Api Test Hangfire",
+    DisplayStorageConnectionString=false,
+    Authorization = new[]
+    {
+        new HangfireCustomBasicAuthenticationFilter
+        {
+            User="admin",
+            Pass="123"
+        }
+    }
+});
+
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
