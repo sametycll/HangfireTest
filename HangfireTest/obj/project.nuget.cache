@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pxmw1Q1t4WRsW2c4snJpnAZCzw/rKk9D5ULodZAZ8YwPliHGePU+43QQBdbPBy3X6uKkLoptB2u1INPLB7O3hA==",
+  "dgSpecHash": "p+LyzGewbAp5n9cHIagOkXi0hp4b8npNO4ypE9IuVh+1/mkpNPmB//oBa+Ut9Rv/qB/6O0Luy1w85sNRzrQaWg==",
   "success": true,
   "projectFilePath": "D:\\C#.NET.2022_17\\HangfireTest\\HangfireTest\\HangfireTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SAMET\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\SAMET\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\SAMET\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\SAMET\\.nuget\\packages\\hangfire\\1.8.11\\hangfire.1.8.11.nupkg.sha512",
     "C:\\Users\\SAMET\\.nuget\\packages\\hangfire.aspnetcore\\1.8.11\\hangfire.aspnetcore.1.8.11.nupkg.sha512",
     "C:\\Users\\SAMET\\.nuget\\packages\\hangfire.core\\1.8.11\\hangfire.core.1.8.11.nupkg.sha512",

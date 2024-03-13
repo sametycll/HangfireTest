@@ -1,26 +1,29 @@
 using Hangfire;
 using HangfireBasicAuthenticationFilter;
+using HangfireTest.Context;
 using HangfireTest.Jobs;
+using HangfireTest.Repositories.WeatherRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddTransient<DbContext>();
+builder.Services.AddTransient<IWeatherRepository, WeatherRepository>();
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+
 var hangfireConnectionString = builder.Configuration.GetConnectionString("HangfireConnection");
 
 builder.Services.AddHangfire(x => {
     x.UseSqlServerStorage(hangfireConnectionString);
-    RecurringJob.AddOrUpdate<JobTest>(j => j.Run(), "*/1 * * * *");
-
+    RecurringJob.AddOrUpdate<JobTest>(j => j.GetWeather(), "*/1 * * * *");
 });
+
 builder.Services.AddHangfireServer();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+
+if (!app.Environment.IsDevelopment()){
+    app.UseExceptionHandler("/Home/Error");    
     app.UseHsts();
 }
 
