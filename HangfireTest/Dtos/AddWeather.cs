@@ -12,7 +12,7 @@ namespace HangfireTest.Dtos
         public string WeatherIcon { get; set; }
         public string Base { get; set; }
         public float Temp { get; set; }
-        public int FeelsLike { get; set; }
+        public float FeelsLike { get; set; }
         public float TempMin { get; set; }
         public float TempMax { get; set; }
         public int Pressure { get; set; }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HangfireTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90fafc197f368eedd276d35f1e24bfa92ff41d7c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ca883776e8d67e063f09d207e4773b664e9e6ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("HangfireTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HangfireTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

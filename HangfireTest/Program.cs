@@ -12,7 +12,8 @@ builder.Services.AddControllersWithViews();
 
 var hangfireConnectionString = builder.Configuration.GetConnectionString("HangfireConnection");
 
-builder.Services.AddHangfire(x => {
+builder.Services.AddHangfire(x =>
+{
     x.UseSqlServerStorage(hangfireConnectionString);
     RecurringJob.AddOrUpdate<JobTest>(j => j.GetWeather(), "*/1 * * * *");
 });
@@ -36,7 +37,7 @@ app.UseAuthorization();
 app.UseHangfireDashboard("/test/jobs", new DashboardOptions
 {
     DashboardTitle = "Api Test Hangfire",
-    DisplayStorageConnectionString=false,
+    DisplayStorageConnectionString = false,
     Authorization = new[]
     {
         new HangfireCustomBasicAuthenticationFilter

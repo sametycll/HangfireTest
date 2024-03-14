@@ -6,5 +6,6 @@ namespace HangfireTest.Repositories.WeatherRepositories
     public interface IWeatherRepository
     {
         Task CreateAsync(WeatherVM entity);
+        Task<AddWeather> LastWVm();
     }
 }

@@ -59,5 +59,15 @@ namespace HangfireTest.Repositories.WeatherRepositories
                 await connection.ExecuteAsync(Sql,parameters);
             }
         }
+
+        public async Task<AddWeather> LastWVm()
+        {
+            string query = "Select TOP 1 * From Weather ORDER BY ID DESC ";
+            using(var connection = _dbContext.CreateConnection())
+            {
+                var value = await connection.QueryAsync<AddWeather>(query);
+                return value.FirstOrDefault();
+            }
+        }
     }
 }
